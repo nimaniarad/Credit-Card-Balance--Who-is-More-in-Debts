@@ -31,10 +31,10 @@ In this project, customers with the highest amount of debt are analyzed. and wha
 
 There are couple of questions need to be answered, such as which individuals can manage their budgets and pay off their debts better.
 
-The first thing that comes to mind can be rich people, but what about the most mejority of middle class communities. Banks would not like to lose their customers to their competirors. So, what is important is to know how banks can have more customers with less debt.
+The first thing that comes to mind can be rich people, but what about the most majority of middle class communities. Banks would not like to lose their customers to their competitors. So, what is important is to know how banks can have more customers with less debt.
 
 Four kinds of individuals are investigated: Students(Non-Students), Married (Unmarried ones), Males
-(Females), and the individual’s ethnicity based on these factors: Income, Credit limit, Age, Education, and
+(Females), and the individuals ethnicity based on these factors: Income, Credit limit, Age, Education, and
 Balance.
 
 ### Model
@@ -43,7 +43,7 @@ In this chapter, the main model will be studied and its advantages and disadvant
 
 **Linear Regression Model**
 
-Linear regression is a model that can simply explain how individuals’ balances are affected by other items such as incomes and limit or they type of persons, students, married or not.
+Linear regression is a model that can simply explain how individuals balances are affected by other items such as incomes and limit or they type of persons, students, married or not.
 
 **May have to apply for some high orders non-linear equations to get better predictions.**
 
@@ -52,7 +52,7 @@ During the analysis, it will be decided which specific models are most useful to
 **Why Linear?**
 
 First starting with simple methods such as linear regression model. Why? Getting the
-results sooner and in the easiest way. Begining with linear regression has also another major benefit. It can help
+results sooner and in the easiest way. Beginning with linear regression has also another major benefit. It can help
 to reduce the cost of the project for the  company as spending less time.
 
 What is more, the regression model is a good approach to find out the relationship between the Balances and other
@@ -60,7 +60,7 @@ factors. Based on the results, it can be said that which groups of individuals
 playing a key role in defaulting and suggesting efficient solutions.
 
 
-```{r setup, include=FALSE}
+```{r setup, warning=FALSE, results='hide'}
 library(readr)
 Credit <- read_csv("C:/Nima/Rstudio/Git/Credit Card Balance; Who is More in Debts/Credit-Card-Balance--Who-is-More-in-Debts-/Credit.csv")
 
@@ -137,6 +137,47 @@ without a major negative effect on the model.
 What is more, the plan is to try non-linear regression model as well. Why? 
 
 The results of pair functions at the first of this chapter shows that there are some non linear relationships among the factors. 
+
+
+## Part B
+
+**Multiple Linear and Non-Linear Regression**
+
+There are several states need to be considered. First, beginning with the simplest one and then more complicated models.
+
+
+As it was discussed in the last chapter, two factors appeared to be more important than the others: Income and
+Limit. So: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

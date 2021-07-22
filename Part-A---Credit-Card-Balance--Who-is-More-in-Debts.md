@@ -41,14 +41,14 @@ There are couple of questions need to be answered, such as which
 individuals can manage their budgets and pay off their debts better.
 
 The first thing that comes to mind can be rich people, but what about
-the most mejority of middle class communities. Banks would not like to
-lose their customers to their competirors. So, what is important is to
+the most majority of middle class communities. Banks would not like to
+lose their customers to their competitors. So, what is important is to
 know how banks can have more customers with less debt.
 
 Four kinds of individuals are investigated: Students(Non-Students),
-Married (Unmarried ones), Males (Females), and the individual’s
-ethnicity based on these factors: Income, Credit limit, Age, Education,
-and Balance.
+Married (Unmarried ones), Males (Females), and the individuals ethnicity
+based on these factors: Income, Credit limit, Age, Education, and
+Balance.
 
 ### Model
 
@@ -57,7 +57,7 @@ disadvantages are discussed.
 
 **Linear Regression Model**
 
-Linear regression is a model that can simply explain how individuals’
+Linear regression is a model that can simply explain how individuals
 balances are affected by other items such as incomes and limit or they
 type of persons, students, married or not.
 
@@ -70,7 +70,7 @@ useful to apply.
 **Why Linear?**
 
 First starting with simple methods such as linear regression model. Why?
-Getting the results sooner and in the easiest way. Begining with linear
+Getting the results sooner and in the easiest way. Beginning with linear
 regression has also another major benefit. It can help to reduce the
 cost of the project for the company as spending less time.
 
@@ -78,6 +78,29 @@ What is more, the regression model is a good approach to find out the
 relationship between the Balances and other factors. Based on the
 results, it can be said that which groups of individuals playing a key
 role in defaulting and suggesting efficient solutions.
+
+``` r
+library(readr)
+Credit <- read_csv("C:/Nima/Rstudio/Git/Credit Card Balance; Who is More in Debts/Credit-Card-Balance--Who-is-More-in-Debts-/Credit.csv")
+```
+
+    ## 
+    ## -- Column specification --------------------------------------------------------
+    ## cols(
+    ##   X1 = col_double(),
+    ##   ID = col_double(),
+    ##   Income = col_double(),
+    ##   Limit = col_double(),
+    ##   Rating = col_double(),
+    ##   Cards = col_double(),
+    ##   Age = col_double(),
+    ##   Education = col_double(),
+    ##   Gender = col_character(),
+    ##   Student = col_character(),
+    ##   Married = col_character(),
+    ##   Ethnicity = col_character(),
+    ##   Balance = col_double()
+    ## )
 
 ``` r
 fix(Credit)
@@ -178,3 +201,13 @@ Why?
 
 The results of pair functions at the first of this chapter shows that
 there are some non linear relationships among the factors.
+
+## Part B
+
+**Multiple Linear and Non-Linear Regression**
+
+There are several states need to be considered. First, beginning with
+the simplest one and then more complicated models.
+
+As it was discussed in the last chapter, two factors appeared to be more
+important than the others: Income and Limit. So:
