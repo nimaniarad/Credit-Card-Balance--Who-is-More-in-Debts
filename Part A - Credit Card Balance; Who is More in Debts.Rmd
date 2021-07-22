@@ -15,6 +15,7 @@ output:
 
 A simulated data set of information from ten thousand customers
 
+
 The aim here is to predict which customers are less in debt on their credit cards and can be trusted to increase their limits. In this project, I show you what exact type of persons we should have more in a bank to reduce credit card balances.
 
 
