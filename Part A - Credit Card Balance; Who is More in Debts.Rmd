@@ -139,18 +139,6 @@ What is more, the plan is to try non-linear regression model as well. Why?
 The results of pair functions at the first of this chapter shows that there are some non linear relationships among the factors. 
 
 
-## Part B
-
-**Multiple Linear and Non-Linear Regression**
-
-There are several states need to be considered. First, beginning with the simplest one and then more complicated models.
-
-
-As it was discussed in the last chapter, two factors appeared to be more important than the others: Income and
-Limit. So: 
-
-
-
 
 
 
