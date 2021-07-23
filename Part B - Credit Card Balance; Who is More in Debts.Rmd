@@ -9,7 +9,7 @@ output:
 
 <style> body {text-align: justify} </style> <!-- Justify text. -->
 
-## Part B
+## Part B - The Model
 
 **Multiple Linear and Non-Linear Regression**
 
@@ -24,13 +24,133 @@ library(readr)
 Credit <- read_csv("C:/Nima/Rstudio/Git/Credit Card Balance; Who is More in Debts/Credit-Card-Balance--Who-is-More-in-Debts-/Credit.csv")
 ```
 
+```{r}
+lm.fit.1 = lm(Balance ~ Income + Limit, data = Credit)
+summary(lm.fit.1)
+```
+
+Statistically Significant: Both of them have p-values close to zero
+
+However, the standard error of Income is higher than the standard error of Limit but instead, it has a major effect in
+terms of the coefficient. 
+
+R-squared close to one: Right Variables & Well Fitted
 
 
+Let see what happens if added Age and Education to support the idea of removing them from the model. 
+
+```{r}
+lm.fit.2 = lm(Balance ~ Income + Limit + Age + Education, data = Credit)
+summary(lm.fit.2)
+```
+
+Their p-values are so high. It means failing to reject the null hypothesis and they are not statistically
+significant. 
+
+They also have a huge standard error. It is interesting that they not only have this amount of
+the error, they also have a negative effect on other  two main factors(Income and Limit). When Age
+and Education added, the standard error rate of both Income and Limit are increased compared. It can be said that the reason for this situation is there are intersections between Age and Education with Limit and Income, but they(Age and Education) are not well behaved with Balance.
+
+As it appears in the result of the cor() and pairs() functions in the previous chapter, Income and Limit have
+something in common. So, it is a good idea to investigate that.
+
+```{r}
+lm.fit.3 = lm(Balance ~ Income*Limit, data = Credit)
+summary(lm.fit.3)
+```
+
+The intersection of Limit and Income has a small p-value, but the standard error and t-value
+are relatively high and small. 
+
+However, no rush to make a decision about them. Keeping it in the model, investigating it later would be a better approach.
+
+Notice that there is a plot of Balance vs Limit in the Part A. They have a non-linear relationship and it should be included it in the model. For now, Limit and Income intersection would be removed. 
+
+```{r}
+lm.fit.4 = lm(Balance ~ Income + Limit + I(Limit^2), data = Credit)
+summary(lm.fit.4)
+```
+
+The model is improved a little bit. The standard error of Income and Limit is decreased, and there is a
+a small p-value regarding the added sentence. Later, trying higher orders would be considered too.
+
+Now it is the time to put them all together:
+
+```{r}
+lm.fit.4 = lm(Balance ~ Income + Limit + Income*Limit + I(Limit^2), data = Credit)
+summary(lm.fit.4)
+```
+
+It seems it is on the right track! 
+
+P-values say the factors all are statistically significant. In addition, RSquared is improved which means the model is fitted better now. The intersection part can be the power of two or more even because the relationship between Limit and Balance is non-linear. 
+
+so trying some higher orders would probably give a better result. 
+
+```{r}
+lm.fit.5 = lm(Balance ~ Income + Limit + I((Income*Limit)^3)+ I(Limit^3),
+data = Credit)
+summary(lm.fit.5)
+```
+
+Fortunately, it is getting better. P-value of Income and Limit is closing to 0 in comparison to its linear
+state. What is more, standard errors are smaller than the previous one. 
+
+Higher orders can be tried, but the model would not be improved anymore. Let's prove that:
+
+```{r}
+lm.fit.6 = lm(Balance ~ Income + Limit + I((Income*Limit)^4)+ I(Limit^4) + Student,
+data = Credit)
+summary(lm.fit.6)
+```
+
+One of the most important aspects of the model is decreased now; R-squared. Also, the standard errors are
+increasing. 
+
+Now it is time to consider Student and Married factors.
+
+```{r}
+lm.fit.7 = lm(Balance ~ Income + Limit + I((Income*Limit)^3)+ I(Limit^3) + Student + Married,
+data = Credit)
+summary(lm.fit.7)
+```
+
+Married p-value indicates that it is not statistically significant (fail to reject the null hypothesis). 
+
+At this point it is a good idea to try log() on Income. It cannot be imporoved but no harm to prove it, right:
+
+```{r}
+lm.fit.8 = lm(Balance ~ log(Income) + Limit + I((Income*Limit)^3)+ I(Limit^3)+ Student,
+data = Credit)
+summary(lm.fit.8)
+```
+
+R-squared is decreased and residual standard error is increased.
 
 
+```{r}
+Model.Final = lm(Balance ~ Income + Limit + I((Income*Limit)^3)+ I(Limit^3)+ Student,
+data = Credit)
+summary(Model.Final)
+```
+
+Significant improvement in R-squared and all P-Values are close to zero! R-squared is 0.9633 which means predictors explain
+96.33% of the variability in Balance that is a great outcome. 
+
+However, relying just on R-squared and P-Values is not enough to say this model is the best one.
+
+Usually, by adding more variables, the adjusted R-squared would be decreased (directly related to the degrees of freedom). 
+
+The good news is the adjusted R-squared is 96.28% saying how powerful is this final Model. In other words, it means important variables are all there. Even adding one variable that should not be there can have a negative effect on the adjusted R-squared. 
 
 
+The residual standard error would be equal to about 9.41 on 394 degrees of freedom.
 
+The Coefficients are: 
+
+```{r}
+coef(Model.Final)
+```
 
 
 
