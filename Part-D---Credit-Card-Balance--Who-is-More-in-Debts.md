@@ -86,7 +86,7 @@ The Income coefficient telling me if an individual has one dollar more
 income, their balance will be decreasing by 8 dollars. In other words,
 rich people are supposed to be less in debt to banks which are sounds
 logical, but it seems it is not the whole story! When I look at the
-limit, understand that if somebody’s limit is one dollar higher, they
+limit, understand that if somebody s limit is one dollar higher, they
 have about 0.215 dollars more balance. The coefficient of the
 intersection of Income and Limit and Limit with the power of three is
 small! I cannot expect a lot of influences from them. On the other hand,
