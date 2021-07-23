@@ -40,7 +40,10 @@ improved. It turned out the third degree is the best one.
 
 Now that I have selected the best model, it is time to interpret what happens between Balance and other variables.
 
-```{r}
+```{r, warning=FALSE}
+library(readr)
+Credit <- read_csv("C:/Nima/Rstudio/Git/Credit Card Balance; Who is More in Debts/Credit-Card-Balance--Who-is-More-in-Debts-/Credit.csv")
+Model.Final = lm(Balance ~ Income + Limit + I((Income*Limit)^3)+ I(Limit^3)+ Student, data = Credit)
 coef(Model.Final)
 ```
 
