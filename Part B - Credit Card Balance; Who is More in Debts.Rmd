@@ -24,3 +24,15 @@ library(readr)
 Credit <- read_csv("C:/Nima/Rstudio/Git/Credit Card Balance; Who is More in Debts/Credit-Card-Balance--Who-is-More-in-Debts-/Credit.csv")
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
