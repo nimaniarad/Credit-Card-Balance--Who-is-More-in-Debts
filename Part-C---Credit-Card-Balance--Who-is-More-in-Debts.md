@@ -32,7 +32,7 @@ Credit <- read_csv("C:/Nima/Rstudio/Git/Credit Card Balance; Who is More in Debt
     ##   Balance = col_double()
     ## )
 
-First let’s take a look at the models again, selecting the first and the
+First lets take a look at the models again, selecting the first and the
 last models and comparing them:
 
 **ANOVA**
@@ -119,7 +119,7 @@ hist(resid, col = "orange")
 It is almost normally distributed which is a piece of good news. It is
 the same as the Q-Q plot explained before.
 
-Now it’s time to test our model.
+Now it is time to test our model.
 
 ### The Validation Set Approach
 
