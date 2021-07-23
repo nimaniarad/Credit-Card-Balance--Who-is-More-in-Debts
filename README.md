@@ -2,6 +2,6 @@
  
 A simulated data set of information from ten thousand customers
 
-It is a familiar data set and can be found easily. The goal of this project is to go through the process. 
+It is a familiar data set and can be found easily. The goal of this project is to go through the regression and testing processes. 
 
-The aim here is to predict which customers are less in debt on their credit cards. In this project, I can show you what exact type of persons we should have more in banks to reduce credit card balances.
+Predicting customers with less debt on their credit cards can help banks to manage them better and identified trusted customers to increase their limits and offering them many other packages. In this project, I show you what exact type of person can be in banks to reduce credit card balances.
